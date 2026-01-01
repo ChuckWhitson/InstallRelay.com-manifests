@@ -1,0 +1,99 @@
+{
+  "name": "Sysinternals Suite",
+  "version": "2025.12.16",
+  "description": "Comprehensive set of Windows system utilities for IT professionals and power users",
+  "vendor": "Microsoft",
+  "license": "Microsoft EULA",
+  "homepage": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "x86", "arm64"]
+  },
+  "installation": {
+    "type": "zip",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "media": [
+      {
+        "name": "SysinternalsSuite.zip",
+        "url": "https://download.sysinternals.com/files/SysinternalsSuite.zip",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://download.sysinternals.com/files/SysinternalsSuite.zip"
+      },
+      {
+        "name": "SysinternalsSuite-Nano.zip",
+        "url": "https://download.sysinternals.com/files/SysinternalsSuite-Nano.zip",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://download.sysinternals.com/files/SysinternalsSuite-Nano.zip"
+      },
+      {
+        "name": "SysinternalsSuite-ARM64.zip",
+        "url": "https://download.sysinternals.com/files/SysinternalsSuite-ARM64.zip",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite",
+            "format": "sha256"
+          }
+        },
+        "architecture": "arm64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://download.sysinternals.com/files/SysinternalsSuite-ARM64.zip"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/Windows/Sysinternals Suite/2025.12.16/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T12:00:00Z",
+    "updated": "2025-12-16T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["system-utilities", "troubleshooting", "microsoft", "sysinternals"],
+    "categories": ["System Tools"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Windows/Sysinternals Suite/2025.12.16/manifest.json",
+    "verify": "/api/verify/apps/Windows/Sysinternals Suite/2025.12.16"
+  }
+}
+

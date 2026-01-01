@@ -1,0 +1,83 @@
+{
+  "name": "Total Commander",
+  "version": "11.56",
+  "description": "File manager for Windows with two-panel interface",
+  "vendor": "Ghisler Software GmbH",
+  "license": "Shareware",
+  "homepage": "https://www.ghisler.com/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "x86"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S", "/D=C:\\Program Files\\Total Commander"],
+    "media": [
+      {
+        "name": "tcmd1156x64.exe",
+        "url": "https://www.ghisler.com/tcmd1156x64.exe",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://www.ghisler.com/download.htm",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://www.ghisler.com/tcmd1156x64.exe"
+      },
+      {
+        "name": "tcmd1156x32.exe",
+        "url": "https://www.ghisler.com/tcmd1156x32.exe",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://www.ghisler.com/download.htm",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x86",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://www.ghisler.com/tcmd1156x32.exe"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/Windows/Total Commander/11.56/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T12:00:00Z",
+    "updated": "2025-01-15T12:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["file-manager", "utilities", "productivity"],
+    "categories": ["Utilities"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Windows/Total Commander/11.56/manifest.json",
+    "verify": "/api/verify/apps/Windows/Total Commander/11.56"
+  }
+}
+

@@ -1,36 +1,41 @@
-name: Sync Manifests to GCS
+name: Pull and Sync from GitHub to GCS
+
+# This workflow can be used as a backup or alternative approach
+# It pulls the latest from GitHub and syncs to GCS
+# Useful if you want to trigger syncs from the GCP side
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '**/*.json'
-      - '**/*.ps1'
-      - '**/*.sh'
-      - '**/*.md'
   workflow_dispatch:
     inputs:
-      force_sync:
-        description: 'Force sync even if no changes detected'
+      branch:
+        description: 'GitHub branch to sync from'
         required: false
-        default: 'false'
-        type: boolean
+        default: 'main'
+        type: string
   schedule:
-    # Run daily at 2:00 AM UTC (adjust timezone as needed)
-    - cron: '0 2 * * *'
+    # Run daily at 3:00 AM UTC (1 hour after push-based sync)
+    - cron: '0 3 * * *'
 
 env:
   GCS_BUCKET: installrelay
   GCS_PREFIX: manifests/
+  GITHUB_REPO: InstallRelay.com-manifests
+  GITHUB_OWNER: YOUR_USERNAME  # Update this
 
 jobs:
-  validate:
-    name: Validate Manifests
+  sync-from-github:
+    name: Pull from GitHub and Sync to GCS
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - name: Checkout code
+      - name: Checkout GitHub repository
         uses: actions/checkout@v4
+        with:
+          repository: ${{ env.GITHUB_OWNER }}/${{ env.GITHUB_REPO }}
+          ref: ${{ github.event.inputs.branch || 'main' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -46,17 +51,6 @@ jobs:
           done
           echo "All manifest.json files are valid"
 
-  sync:
-    name: Sync to GCS
-    needs: validate
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
@@ -68,7 +62,7 @@ jobs:
 
       - name: Sync manifests to GCS
         run: |
-          echo "Syncing manifests to gs://${GCS_BUCKET}/${GCS_PREFIX}"
+          echo "Syncing manifests from GitHub to gs://${GCS_BUCKET}/${GCS_PREFIX}"
           gsutil -m rsync -r -d . gs://${GCS_BUCKET}/${GCS_PREFIX}
           echo "Sync completed successfully"
 
@@ -79,15 +73,7 @@ jobs:
 
       - name: Report sync status
         run: |
-          echo "✅ Successfully synced manifests to GCS"
+          echo "✅ Successfully synced manifests from GitHub to GCS"
           echo "📦 Bucket: gs://${GCS_BUCKET}/${GCS_PREFIX}"
-          echo "🌿 Branch: ${{ github.ref_name }}"
-          echo "📝 Commit: ${{ github.sha }}"
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "⏰ Trigger: Scheduled daily sync"
-          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "👤 Trigger: Manual"
-          else
-            echo "🔄 Trigger: Push to ${{ github.ref_name }}"
-          fi
+          echo "🌿 Branch: ${{ github.event.inputs.branch || 'main' }}"
 
