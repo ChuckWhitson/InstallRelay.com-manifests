@@ -1,0 +1,82 @@
+{
+  "name": "PowerShell",
+  "version": "7.5.0",
+  "description": "Cross-platform automation and configuration tool/framework",
+  "vendor": "Microsoft",
+  "license": "MIT",
+  "homepage": "https://github.com/PowerShell/PowerShell",
+  "os": {
+    "platform": "linux",
+    "verifyOSVersion": false,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"],
+    "supportedDistributions": ["ubuntu", "debian", "fedora", "rhel", "centos", "opensuse"]
+  },
+  "installation": {
+    "type": "package",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "packageManagers": {
+      "apt": {
+        "command": "apt-get install -y powershell",
+        "requiresElevation": true
+      },
+      "yum": {
+        "command": "yum install -y powershell",
+        "requiresElevation": true
+      },
+      "dnf": {
+        "command": "dnf install -y powershell",
+        "requiresElevation": true
+      },
+      "zypper": {
+        "command": "zypper install -y powershell",
+        "requiresElevation": true
+      }
+    },
+    "media": [
+      {
+        "name": "powershell-7.5.0-linux-x64.tar.gz",
+        "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-linux-x64.tar.gz",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://github.com/PowerShell/PowerShell/releases/tag/v7.5.0",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-linux-x64.tar.gz"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/Linux/PowerShell/7.5.0/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T12:00:00Z",
+    "updated": "2025-01-15T12:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["powershell", "automation", "scripting", "microsoft"],
+    "categories": ["Development Tools", "System Utilities"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Linux/PowerShell/7.5.0/manifest.json",
+    "verify": "/api/verify/apps/Linux/PowerShell/7.5.0"
+  }
+}
+

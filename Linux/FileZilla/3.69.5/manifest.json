@@ -1,0 +1,84 @@
+{
+  "name": "FileZilla",
+  "version": "3.69.5",
+  "description": "FTP, FTPS and SFTP client",
+  "vendor": "FileZilla Project",
+  "license": "GPL",
+  "homepage": "https://filezilla-project.org/",
+  "os": {
+    "platform": "linux",
+    "minOSVersion": "",
+    "verifyOSVersion": false,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "tar",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["-y"],
+    "media": [
+      {
+        "name": "FileZilla_3.69.5_x86_64-linux-gnu.tar.xz",
+        "url": "https://dl2.cdn.filezilla-project.org/client/FileZilla_3.69.5_x86_64-linux-gnu.tar.xz?h=uhjstG8W22Tv5hGzMeXgfA&x=1767260775",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://dl2.cdn.filezilla-project.org/client/FileZilla_3.69.5_x86_64-linux-gnu.tar.xz?h=uhjstG8W22Tv5hGzMeXgfA&x=1767260775"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.69.5/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "interpreter": "/bin/bash",
+        "requiresRoot": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "configuration": {
+    "templates": [
+      {
+        "name": "default",
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.69.5/configs/default.json",
+        "description": "Default FileZilla configuration",
+        "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json"
+      },
+      {
+        "name": "secure",
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.69.5/configs/secure.json",
+        "description": "Secure FileZilla configuration (SFTP only)",
+        "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json"
+      },
+      {
+        "name": "enterprise",
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.69.5/configs/enterprise.json",
+        "description": "Enterprise FileZilla configuration",
+        "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json"
+      }
+    ],
+    "validation": {
+      "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json",
+      "required": ["protocol", "host"]
+    }
+  },
+  "metadata": {
+    "created": "2025-12-31T00:00:00Z",
+    "updated": "2025-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["ftp", "sftp", "file-transfer", "network"],
+    "categories": ["Network Tools"]
+  }
+}
+
+

@@ -1,0 +1,70 @@
+name: Sync Manifests to GCS
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.json'
+      - '**/*.ps1'
+      - '**/*.sh'
+      - '**/*.md'
+  workflow_dispatch:
+
+env:
+  GCS_BUCKET: installrelay
+  GCS_PREFIX: manifests/
+
+jobs:
+  validate:
+    name: Validate Manifests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating all manifest.json files..."
+          find . -name "manifest.json" -type f | while read file; do
+            echo "Validating $file"
+            python3 -m json.tool "$file" > /dev/null || exit 1
+          done
+          echo "All manifest.json files are valid"
+
+  sync:
+    name: Sync to GCS
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Sync manifests to GCS
+        run: |
+          echo "Syncing manifests to gs://${GCS_BUCKET}/${GCS_PREFIX}"
+          gsutil -m rsync -r -d . gs://${GCS_BUCKET}/${GCS_PREFIX}
+          echo "Sync completed successfully"
+
+      - name: Verify sync
+        run: |
+          echo "Verifying sync..."
+          gsutil ls -r gs://${GCS_BUCKET}/${GCS_PREFIX} | head -20
+

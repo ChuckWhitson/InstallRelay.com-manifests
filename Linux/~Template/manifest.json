@@ -1,0 +1,65 @@
+{
+  "name": "Application Name",
+  "version": "1.0.0",
+  "description": "Brief description of the application",
+  "vendor": "Vendor Name",
+  "license": "License Type",
+  "homepage": "https://example.com/",
+  "os": {
+    "platform": "linux",
+    "minOSVersion": "18.04",
+    "verifyOSVersion": false,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "aarch64"]
+  },
+  "installation": {
+    "type": "deb",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "media": [
+      {
+        "name": "app-name-x64.deb",
+        "url": "https://example.com/downloads/app-name-x64.deb",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "value": "",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://example.com/downloads/",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://example.com/downloads/app-name-x64.deb"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/Linux/Application Name/1.0.0/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-01T00:00:00Z",
+    "updated": "2025-01-01T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["tag1", "tag2"],
+    "categories": ["Category"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Linux/Application Name/1.0.0/manifest.json",
+    "verify": "/api/verify/apps/Linux/Application Name/1.0.0"
+  }
+}
+

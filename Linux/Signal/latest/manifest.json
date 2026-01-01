@@ -1,0 +1,59 @@
+{
+  "name": "Signal",
+  "version": "latest",
+  "description": "Signal Desktop - Private messaging with end-to-end encryption",
+  "vendor": "Signal Foundation",
+  "license": "AGPL-3.0",
+  "homepage": "https://signal.org/",
+  "os": {
+    "platform": "linux",
+    "minOSVersion": "18.04",
+    "verifyOSVersion": false,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "deb",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "media": [
+      {
+        "name": "signal-desktop",
+        "url": "https://updates.signal.org/desktop/apt",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "relay": true,
+        "vendor_url": "https://updates.signal.org/desktop/apt",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/linux/Signal/latest/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T12:00:00Z",
+    "updated": "2025-01-15T12:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["messaging", "privacy", "encryption", "communication"],
+    "categories": ["Communication"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/linux/Signal/latest/manifest.json",
+    "verify": "/api/verify/apps/linux/Signal/latest"
+  }
+}
+

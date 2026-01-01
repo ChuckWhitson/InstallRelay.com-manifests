@@ -1,0 +1,29 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*.backup
+
+# Test files
+test-*
+*-test.*
+
+# SHA256 files (these are generated)
+*.sha256
+
+# Keep .sha256 files that are committed
+!.sha256
+

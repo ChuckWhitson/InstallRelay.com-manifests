@@ -1,0 +1,63 @@
+{
+  "name": "WinSCP",
+  "version": "6.3.2",
+  "description": "SFTP, FTP, WebDAV, Amazon S3 and SCP client",
+  "vendor": "Martin Prikryl",
+  "license": "GPL",
+  "homepage": "https://winscp.net/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/SILENT", "/NORESTART"],
+    "media": [
+      {
+        "name": "WinSCP-6.3.2-Setup.exe",
+        "url": "https://winscp.net/eng/downloads/WinSCP-6.3.2-Setup.exe",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://winscp.net/eng/download.php",
+            "format": "sha256",
+            "pattern": "SHA-256:\\s*([a-f0-9]{64})"
+          }
+        },
+        "relay": true,
+        "vendor_url": "https://winscp.net/eng/downloads/WinSCP-6.3.2-Setup.exe",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/WinSCP/6.3.2/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-01-15T10:30:00Z",
+    "updated": "2024-01-15T10:30:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["ftp", "sftp", "file-transfer", "network"],
+    "categories": ["Network Tools"]
+  }
+}
+

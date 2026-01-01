@@ -1,0 +1,64 @@
+{
+  "name": "Signal",
+  "version": "7.83.0",
+  "description": "Signal Desktop - Private messaging with end-to-end encryption",
+  "vendor": "Signal Foundation",
+  "license": "AGPL-3.0",
+  "homepage": "https://signal.org/",
+  "os": {
+    "platform": "macos",
+    "minOSVersion": "11.0",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "arm64"]
+  },
+  "installation": {
+    "type": "dmg",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": false,
+    "media": [
+      {
+        "name": "signal-desktop-mac-universal-7.83.0.dmg",
+        "url": "https://updates.signal.org/desktop/signal-desktop-mac-universal-7.83.0.dmg",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://signal.org/download/macos/",
+            "format": "sha256"
+          }
+        },
+        "relay": true,
+        "vendor_url": "https://updates.signal.org/desktop/signal-desktop-mac-universal-7.83.0.dmg",
+        "architecture": "universal",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/MacOS/Signal/latest/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T12:00:00Z",
+    "updated": "2025-01-15T12:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["messaging", "privacy", "encryption", "communication"],
+    "categories": ["Communication"]
+  },
+    "api_endpoints": {
+    "manifest": "/api/manifest/MacOS/Signal/7.83.0/manifest.json",
+    "verify": "/api/verify/apps/MacOS/Signal/7.83.0"
+  }
+}
+

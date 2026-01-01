@@ -1,0 +1,107 @@
+{
+  "name": "FileZilla",
+  "version": "3.67.1",
+  "description": "FTP, FTPS and SFTP client",
+  "vendor": "FileZilla Project",
+  "license": "GPL",
+  "homepage": "https://filezilla-project.org/",
+  "os": {
+    "platform": "linux",
+    "minOSVersion": "",
+    "verifyOSVersion": false,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "arm64"]
+  },
+  "installation": {
+    "type": "deb",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["-y"],
+    "media": [
+      {
+        "name": "filezilla_3.67.1_amd64.deb",
+        "url": "https://download.filezilla-project.org/client/FileZilla_3.67.1_x86_64-linux-gnu.tar.bz2",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://filezilla-project.org/download.php?type=client",
+            "format": "sha256",
+            "pattern": "SHA-256:\\s*([a-f0-9]{64})"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://download.filezilla-project.org/client/FileZilla_3.67.1_x86_64-linux-gnu.tar.bz2"
+      },
+      {
+        "name": "filezilla_3.67.1_arm64.deb",
+        "url": "https://download.filezilla-project.org/client/FileZilla_3.67.1_aarch64-linux-gnu.tar.bz2",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://filezilla-project.org/download.php?type=client",
+            "format": "sha256",
+            "pattern": "SHA-256:\\s*([a-f0-9]{64})"
+          }
+        },
+        "architecture": "arm64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://download.filezilla-project.org/client/FileZilla_3.67.1_aarch64-linux-gnu.tar.bz2"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.67.1/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "interpreter": "/bin/bash",
+        "requiresRoot": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "configuration": {
+    "templates": [
+      {
+        "name": "default",
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.67.1/configs/default.json",
+        "description": "Default FileZilla configuration",
+        "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json"
+      },
+      {
+        "name": "secure",
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.67.1/configs/secure.json",
+        "description": "Secure FileZilla configuration (SFTP only)",
+        "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json"
+      },
+      {
+        "name": "enterprise",
+        "url": "https://installrelay.com/api/apps/linux/FileZilla/3.67.1/configs/enterprise.json",
+        "description": "Enterprise FileZilla configuration",
+        "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json"
+      }
+    ],
+    "validation": {
+      "schema": "https://installrelay.com/api/templates/linux/filezilla-config-schema.json",
+      "required": ["protocol", "host"]
+    }
+  },
+  "metadata": {
+    "created": "2024-01-15T10:30:00:00Z",
+    "updated": "2024-01-15T10:30:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["ftp", "sftp", "file-transfer", "network"],
+    "categories": ["Network Tools"]
+  }
+}
+

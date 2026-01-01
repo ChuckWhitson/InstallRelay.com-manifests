@@ -1,0 +1,66 @@
+{
+  "name": "Signal",
+  "version": "7.83.0",
+  "description": "Signal Desktop - Private messaging with end-to-end encryption",
+  "vendor": "Signal Foundation",
+  "license": "AGPL-3.0",
+  "homepage": "https://signal.org/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["--silent"],
+    "media": [
+      {
+        "name": "signal-desktop-win-7.83.0.exe",
+        "url": "https://updates.signal.org/desktop/signal-desktop-win-7.83.0.exe",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://signal.org/download/windows/",
+            "format": "sha256"
+          }
+        },
+        "relay": true,
+        "vendor_url": "https://updates.signal.org/desktop/signal-desktop-win-7.83.0.exe",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/Signal/latest/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T12:00:00Z",
+    "updated": "2025-01-15T12:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["messaging", "privacy", "encryption", "communication"],
+    "categories": ["Communication"]
+  },
+    "api_endpoints": {
+    "manifest": "/api/manifest/Windows/Signal/7.83.0/manifest.json",
+    "verify": "/api/verify/apps/Windows/Signal/7.83.0"
+  }
+}
+

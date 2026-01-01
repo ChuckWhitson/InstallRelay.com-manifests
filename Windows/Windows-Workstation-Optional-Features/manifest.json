@@ -1,0 +1,91 @@
+{
+  "name": "Windows Workstation Optional Features",
+  "version": "latest",
+  "description": "Install RSAT (Remote Server Administration Tools) optional features on Windows 11",
+  "vendor": "Microsoft",
+  "license": "Proprietary",
+  "homepage": "https://learn.microsoft.com/en-us/windows-server/remote/remote-server-administration-tools",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.22000",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"],
+    "workstationOnly": true
+  },
+  "installation": {
+    "type": "powershell",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": false,
+    "interactive": true,
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/Windows-Workstation-Optional-Features/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [
+    {
+      "name": "Windows 11",
+      "description": "Must be running Windows 11 (build 22000 or later)",
+      "check": "powershell",
+      "command": "[System.Environment]::OSVersion.Version -ge [Version]'10.0.22000'"
+    },
+    {
+      "name": "Administrator Rights",
+      "description": "Must be running as Administrator",
+      "check": "powershell",
+      "command": "([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)"
+    },
+    {
+      "name": "Internet Connection",
+      "description": "Internet connection required to download features",
+      "check": "manual"
+    }
+  ],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-01-15T10:30:00Z",
+    "updated": "2024-01-15T10:30:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["windows-11", "rsat", "optional-features", "workstation"],
+    "categories": ["Optional Features"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/windows/Windows-Workstation-Optional-Features/manifest.json",
+    "verify": "/api/verify/apps/windows/Windows-Workstation-Optional-Features"
+  },
+  "features": {
+    "available": [
+      "Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0",
+      "Rsat.AzureStack.HCI.Management.Tools~~~~0.0.1.0",
+      "Rsat.BitLocker.Recovery.Tools~~~~0.0.1.0",
+      "Rsat.CertificateServices.Tools~~~~0.0.1.0",
+      "Rsat.DHCP.Tools~~~~0.0.1.0",
+      "Rsat.Dns.Tools~~~~0.0.1.0",
+      "Rsat.FailoverCluster.Management.Tools~~~~0.0.1.0",
+      "Rsat.FileServices.Tools~~~~0.0.1.0",
+      "Rsat.GroupPolicy.Management.Tools~~~~0.0.1.0",
+      "Rsat.IPAM.Client.Tools~~~~0.0.1.0",
+      "Rsat.LLDP.Tools~~~~0.0.1.0",
+      "Rsat.NetworkController.Tools~~~~0.0.1.0",
+      "Rsat.NetworkLoadBalancing.Tools~~~~0.0.1.0",
+      "Rsat.RemoteAccess.Management.Tools~~~~0.0.1.0",
+      "Rsat.RemoteDesktop.Services.Tools~~~~0.0.1.0",
+      "Rsat.ServerManager.Tools~~~~0.0.1.0",
+      "Rsat.StorageMigrationService.Management.Tools~~~~0.0.1.0",
+      "Rsat.StorageReplica.Tools~~~~0.0.1.0",
+      "Rsat.SystemInsights.Management.Tools~~~~0.0.1.0",
+      "Rsat.VolumeActivation.Tools~~~~0.0.1.0",
+      "Rsat.WSUS.Tools~~~~0.0.1.0"
+    ]
+  }
+}
+

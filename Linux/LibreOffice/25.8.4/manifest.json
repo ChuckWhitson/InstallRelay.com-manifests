@@ -1,0 +1,91 @@
+{
+  "name": "LibreOffice",
+  "version": "25.8.4",
+  "description": "Free and open-source office productivity suite",
+  "vendor": "The Document Foundation",
+  "license": "MPL-2.0",
+  "homepage": "https://www.libreoffice.org/",
+  "os": {
+    "platform": "linux",
+    "verifyOSVersion": false,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"],
+    "supportedDistributions": ["ubuntu", "debian", "fedora", "rhel", "centos", "opensuse"]
+  },
+  "installation": {
+    "type": "package",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "packageManagers": {
+      "apt": {
+        "command": "apt-get install -y libreoffice",
+        "requiresElevation": true
+      },
+      "yum": {
+        "command": "yum install -y libreoffice",
+        "requiresElevation": true
+      },
+      "dnf": {
+        "command": "dnf install -y libreoffice",
+        "requiresElevation": true
+      },
+      "zypper": {
+        "command": "zypper install -y libreoffice",
+        "requiresElevation": true
+      }
+    },
+    "media": [
+      {
+        "name": "LibreOffice_25.8.4_Linux_x86-64_deb.tar.gz",
+        "url": "https://www.libreoffice.org/donate/dl/deb-x86_64/25.8.4/en-US/LibreOffice_25.8.4_Linux_x86-64_deb.tar.gz",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://www.libreoffice.org/donate/dl/deb-x86_64/25.8.4/en-US/LibreOffice_25.8.4_Linux_x86-64_deb.tar.gz"
+      },
+      {
+        "name": "LibreOffice_25.8.4_Linux_x86-64_rpm.tar.gz",
+        "url": "https://www.libreoffice.org/donate/dl/rpm-x86_64/25.8.4/en-US/LibreOffice_25.8.4_Linux_x86-64_rpm.tar.gz",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://www.libreoffice.org/donate/dl/rpm-x86_64/25.8.4/en-US/LibreOffice_25.8.4_Linux_x86-64_rpm.tar.gz"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/linux/LibreOffice/25.8.4/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "interpreter": "/bin/bash",
+        "requiresRoot": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-12-31T00:00:00Z",
+    "updated": "2025-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["office", "productivity", "word-processor", "spreadsheet", "presentation"],
+    "categories": ["Office Suites"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/linux/LibreOffice/25.8.4/manifest.json",
+    "verify": "/api/verify/apps/linux/LibreOffice/25.8.4"
+  }
+}
+
+

@@ -1,0 +1,67 @@
+{
+  "name": "LibreOffice",
+  "version": "25.2.7",
+  "description": "Free and open-source office productivity suite",
+  "vendor": "The Document Foundation",
+  "license": "MPL-2.0",
+  "homepage": "https://www.libreoffice.org/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "msi",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/qn", "/norestart"],
+    "media": [
+      {
+        "name": "LibreOffice_25.2.7_Win_x64.msi",
+        "url": "https://download.libreoffice.org/libreoffice/stable/25.2.7/win/x86_64/LibreOffice_25.2.7_Win_x64.msi",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://download.libreoffice.org/libreoffice/stable/25.2.7/win/x86_64/",
+            "format": "sha256",
+            "pattern": "SHA256\\s+([a-fA-F0-9]{64})"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://download.libreoffice.org/libreoffice/stable/25.2.7/win/x86_64/LibreOffice_25.2.7_Win_x64.msi"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/LibreOffice/25.2.7/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-12-31T00:00:00Z",
+    "updated": "2025-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["office", "productivity", "word-processor", "spreadsheet", "presentation"],
+    "categories": ["Office Suites"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/windows/LibreOffice/25.2.7/manifest.json",
+    "verify": "/api/verify/apps/windows/LibreOffice/25.2.7"
+  }
+}
+

@@ -1,0 +1,74 @@
+{
+  "name": "LibreOffice",
+  "version": "25.8.4",
+  "description": "Free and open-source office productivity suite",
+  "vendor": "The Document Foundation",
+  "license": "MPL-2.0",
+  "homepage": "https://www.libreoffice.org/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "arm64"]
+  },
+  "installation": {
+    "type": "msi",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/qn", "/norestart"],
+    "media": [
+      {
+        "name": "LibreOffice_25.8.4_Win_x86-64.msi",
+        "url": "https://www.libreoffice.org/donate/dl/win-x86_64/25.8.4/en-US/LibreOffice_25.8.4_Win_x86-64.msi",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://www.libreoffice.org/donate/dl/win-x86_64/25.8.4/en-US/LibreOffice_25.8.4_Win_x86-64.msi"
+      },
+      {
+        "name": "LibreOffice_25.8.4_Win_aarch64.msi",
+        "url": "https://www.libreoffice.org/donate/dl/win-aarch64/25.8.4/en-US/LibreOffice_25.8.4_Win_aarch64.msi",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "architecture": "arm64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://www.libreoffice.org/donate/dl/win-aarch64/25.8.4/en-US/LibreOffice_25.8.4_Win_aarch64.msi"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/LibreOffice/25.8.4/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-12-31T00:00:00Z",
+    "updated": "2025-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["office", "productivity", "word-processor", "spreadsheet", "presentation"],
+    "categories": ["Office Suites"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/windows/LibreOffice/25.8.4/manifest.json",
+    "verify": "/api/verify/apps/windows/LibreOffice/25.8.4"
+  }
+}
+
+

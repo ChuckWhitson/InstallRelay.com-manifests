@@ -1,0 +1,63 @@
+{
+  "name": "RealVNC Viewer",
+  "version": "7.10.0",
+  "description": "Remote desktop viewer - Connect to and control remote computers securely",
+  "vendor": "RealVNC",
+  "license": "Proprietary",
+  "homepage": "https://www.realvnc.com/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S"],
+    "media": [
+      {
+        "name": "VNC-Viewer-7.10.0-Windows-64bit.exe",
+        "url": "https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.10.0-Windows-64bit.exe",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://www.realvnc.com/en/connect/download/viewer/",
+            "format": "sha256",
+            "pattern": "VNC-Viewer-7\\.10\\.0.*?SHA256:\\s*([a-f0-9]{64})"
+          }
+        },
+        "relay": true,
+        "vendor_url": "https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.10.0-Windows-64bit.exe",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/RealVNC Viewer/7.10.0/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-12-31T00:00:00Z",
+    "updated": "2024-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["remote-desktop", "vnc", "remote-access", "network"],
+    "categories": ["Network Tools"]
+  }
+}
+

@@ -1,0 +1,57 @@
+{
+  "name": "GitHub Desktop",
+  "version": "3.4.7",
+  "description": "GitHub Desktop client - Extend your GitHub workflow beyond your browser",
+  "vendor": "GitHub",
+  "license": "MIT",
+  "homepage": "https://desktop.github.com/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S"],
+    "media": [
+      {
+        "name": "GitHubDesktopSetup-x64.exe",
+        "url": "https://central.github.com/deployments/desktop/desktop/latest/win32",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "relay": true,
+        "vendor_url": "https://central.github.com/deployments/desktop/desktop/latest/win32",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/GitHub Desktop/3.4.7/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-12-31T00:00:00Z",
+    "updated": "2024-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["git", "github", "version-control", "development"],
+    "categories": ["Development Tools"]
+  }
+}
+

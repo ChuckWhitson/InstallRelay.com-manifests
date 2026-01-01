@@ -1,0 +1,62 @@
+{
+  "name": "Notepad++",
+  "version": "8.6.4",
+  "description": "Free source code editor and Notepad replacement",
+  "vendor": "Don Ho",
+  "license": "GPL",
+  "homepage": "https://notepad-plus-plus.org/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S"],
+    "media": [
+      {
+        "name": "npp.8.6.4.Installer.x64.exe",
+        "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.6.4/npp.8.6.4.Installer.x64.exe",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "github",
+            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.6.4/npp.8.6.4.Installer.x64.exe.sha256",
+            "format": "sha256"
+          }
+        },
+        "relay": true,
+        "vendor_url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.6.4/npp.8.6.4.Installer.x64.exe",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/Notepad++/8.6.4/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-01-15T10:30:00Z",
+    "updated": "2024-01-15T10:30:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["editor", "text", "code"],
+    "categories": ["Development Tools"]
+  }
+}
+

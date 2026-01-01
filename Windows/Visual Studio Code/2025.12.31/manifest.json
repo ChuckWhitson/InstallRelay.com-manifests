@@ -1,0 +1,63 @@
+{
+  "name": "Visual Studio Code",
+  "version": "2025.12.31",
+  "description": "Code editor redefined and optimized for building and debugging modern web and cloud applications",
+  "vendor": "Microsoft",
+  "license": "MIT",
+  "homepage": "https://code.visualstudio.com/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/VERYSILENT", "/NORESTART"],
+    "media": [
+      {
+        "name": "VSCodeUserSetup-x64.exe",
+        "url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://code.visualstudio.com/sha",
+            "format": "sha256",
+            "pattern": "VSCodeUserSetup-x64\\.exe.*?([a-f0-9]{64})"
+          }
+        },
+        "relay": true,
+        "vendor_url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/Visual Studio Code/2025.12.31/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-12-31T00:00:00Z",
+    "updated": "2024-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["editor", "code", "development", "ide", "debugging"],
+    "categories": ["Development Tools"]
+  }
+}
+

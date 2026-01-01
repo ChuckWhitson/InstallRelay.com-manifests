@@ -1,0 +1,84 @@
+{
+  "name": "FileZilla",
+  "version": "3.69.5",
+  "description": "FTP, FTPS and SFTP client",
+  "vendor": "FileZilla Project",
+  "license": "GPL",
+  "homepage": "https://filezilla-project.org/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S"],
+    "media": [
+      {
+        "name": "FileZilla_3.69.5_win64-setup.exe",
+        "url": "https://dl2.cdn.filezilla-project.org/client/FileZilla_3.69.5_win64-setup.exe?h=j3Z3lTW-fyGkwHYowVjjTg&x=1767260775",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "relay": true,
+        "vendor_url": "https://dl2.cdn.filezilla-project.org/client/FileZilla_3.69.5_win64-setup.exe?h=j3Z3lTW-fyGkwHYowVjjTg&x=1767260775",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/FileZilla/3.69.5/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "configuration": {
+    "templates": [
+      {
+        "name": "default",
+        "url": "https://installrelay.com/api/apps/windows/FileZilla/3.69.5/configs/default.json",
+        "description": "Default FileZilla configuration",
+        "schema": "https://installrelay.com/api/templates/windows/filezilla-config-schema.json"
+      },
+      {
+        "name": "secure",
+        "url": "https://installrelay.com/api/apps/windows/FileZilla/3.69.5/configs/secure.json",
+        "description": "Secure FileZilla configuration (SFTP only, no FTP)",
+        "schema": "https://installrelay.com/api/templates/windows/filezilla-config-schema.json"
+      },
+      {
+        "name": "enterprise",
+        "url": "https://installrelay.com/api/apps/windows/FileZilla/3.69.5/configs/enterprise.json",
+        "description": "Enterprise FileZilla configuration",
+        "schema": "https://installrelay.com/api/templates/windows/filezilla-config-schema.json"
+      }
+    ],
+    "validation": {
+      "schema": "https://installrelay.com/api/templates/windows/filezilla-config-schema.json",
+      "required": ["protocol", "host"]
+    }
+  },
+  "metadata": {
+    "created": "2025-12-31T00:00:00Z",
+    "updated": "2025-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["ftp", "sftp", "file-transfer", "network"],
+    "categories": ["Network Tools"]
+  }
+}
+
+

@@ -1,0 +1,75 @@
+{
+  "name": "Active Directory Domain Services",
+  "version": "latest",
+  "description": "Install Active Directory Domain Services (AD DS) role on Windows Server",
+  "vendor": "Microsoft",
+  "license": "Proprietary",
+  "homepage": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.17763",
+    "verifyOSVersion": true,
+    "enforceOSVersion": true,
+    "supportedArchitectures": ["x64"],
+    "serverOnly": true
+  },
+  "installation": {
+    "type": "powershell",
+    "rebootRequired": true,
+    "requiresElevation": true,
+    "silentInstall": false,
+    "interactive": true,
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/Windows-Server-Roles-and-Features/Active-Directory-Domain-Services/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [
+    {
+      "name": "Windows Server",
+      "description": "Must be running Windows Server 2019 or later",
+      "check": "powershell",
+      "command": "[System.Environment]::OSVersion.Version -ge [Version]'10.0.17763'"
+    },
+    {
+      "name": "Administrator Rights",
+      "description": "Must be running as Administrator",
+      "check": "powershell",
+      "command": "([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)"
+    },
+    {
+      "name": "Static IP Address",
+      "description": "Server must have a static IP address configured",
+      "check": "manual"
+    }
+  ],
+  "dependencies": [],
+  "postInstall": [
+    {
+      "description": "Server will reboot after installation",
+      "action": "reboot"
+    },
+    {
+      "description": "After reboot, run DCPromo or use Server Manager to promote to Domain Controller",
+      "action": "manual"
+    }
+  ],
+  "metadata": {
+    "created": "2024-01-15T10:30:00Z",
+    "updated": "2024-01-15T10:30:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["windows-server", "active-directory", "domain-services", "roles"],
+    "categories": ["Server Roles"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/windows/Windows-Server-Roles-and-Features/Active-Directory-Domain-Services/manifest.json",
+    "verify": "/api/verify/apps/windows/Windows-Server-Roles-and-Features/Active-Directory-Directory-Services"
+  }
+}
+

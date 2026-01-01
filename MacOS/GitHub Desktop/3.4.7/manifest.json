@@ -1,0 +1,73 @@
+{
+  "name": "GitHub Desktop",
+  "version": "3.4.7",
+  "description": "GitHub Desktop client - Extend your GitHub workflow beyond your browser",
+  "vendor": "GitHub",
+  "license": "MIT",
+  "homepage": "https://desktop.github.com/",
+  "os": {
+    "platform": "macos",
+    "minOSVersion": "10.15",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "arm64"]
+  },
+  "installation": {
+    "type": "zip",
+    "rebootRequired": false,
+    "requiresElevation": false,
+    "silentInstall": false,
+    "media": [
+      {
+        "name": "GitHubDesktop-darwin.zip",
+        "url": "https://central.github.com/deployments/desktop/desktop/latest/darwin",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "relay": true,
+        "vendor_url": "https://central.github.com/deployments/desktop/desktop/latest/darwin",
+        "architecture": "x64",
+        "language": "en-US"
+      },
+      {
+        "name": "GitHubDesktop-darwin-arm64.zip",
+        "url": "https://central.github.com/deployments/desktop/desktop/latest/darwin-arm64",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "relay": true,
+        "vendor_url": "https://central.github.com/deployments/desktop/desktop/latest/darwin-arm64",
+        "architecture": "arm64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/MacOS/GitHub Desktop/3.4.7/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "interpreter": "/bin/bash",
+        "requiresRoot": false
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-12-31T00:00:00Z",
+    "updated": "2024-12-31T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["git", "github", "version-control", "development"],
+    "categories": ["Development Tools"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/MacOS/GitHub Desktop/3.4.7/manifest.json",
+    "verify": "/api/verify/apps/macos/GitHub Desktop/3.4.7"
+  }
+}
+
+

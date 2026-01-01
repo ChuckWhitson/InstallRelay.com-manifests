@@ -1,0 +1,60 @@
+{
+  "name": "Google Drive",
+  "version": "2025.01.15",
+  "description": "Google Drive for Desktop - Sync and access your files from anywhere. Note: Google does not provide an official Linux client. This manifest provides installation via Insync (third-party client).",
+  "vendor": "Google / Insync",
+  "license": "Proprietary",
+  "homepage": "https://www.insynchq.com/",
+  "os": {
+    "platform": "linux",
+    "minOSVersion": "18.04",
+    "verifyOSVersion": false,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "deb",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "media": [
+      {
+        "name": "insync",
+        "url": "https://www.insynchq.com/downloads",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "relay": true,
+        "vendor_url": "https://www.insynchq.com/downloads",
+        "architecture": "x64",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/Linux/Google Drive/2025.01.15/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T10:00:00Z",
+    "updated": "2025-01-15T10:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["cloud-storage", "sync", "backup", "file-sharing"],
+    "categories": ["Cloud Storage"],
+    "notes": "Google does not provide an official Linux client. Insync is a third-party solution that provides Google Drive synchronization for Linux."
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Linux/Google Drive/2025.01.15/manifest.json",
+    "verify": "/api/verify/manifests/Linux/Google Drive/2025.01.15/install.sh"
+  }
+}
+

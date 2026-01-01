@@ -1,0 +1,64 @@
+{
+  "name": "Google Drive",
+  "version": "2025.01.15",
+  "description": "Google Drive for Desktop - Sync and access your files from anywhere",
+  "vendor": "Google",
+  "license": "Proprietary",
+  "homepage": "https://www.google.com/drive/download/",
+  "os": {
+    "platform": "macos",
+    "minOSVersion": "11.0",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "arm64"]
+  },
+  "installation": {
+    "type": "dmg",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": false,
+    "media": [
+      {
+        "name": "GoogleDrive.dmg",
+        "url": "https://dl.google.com/drive-file-stream/GoogleDrive.dmg",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://www.google.com/drive/download/",
+            "format": "sha256"
+          }
+        },
+        "relay": true,
+        "vendor_url": "https://dl.google.com/drive-file-stream/GoogleDrive.dmg",
+        "architecture": "universal",
+        "language": "en-US"
+      }
+    ],
+    "scripts": {
+      "shell": {
+        "url": "https://installrelay.com/api/apps/MacOS/Google Drive/2025.01.15/install.sh",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-15T10:00:00Z",
+    "updated": "2025-01-15T10:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["cloud-storage", "sync", "backup", "file-sharing"],
+    "categories": ["Cloud Storage"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/macOS/Google Drive/2025.01.15/manifest.json",
+    "verify": "/api/verify/manifests/MacOS/Google Drive/2025.01.15/install.sh"
+  }
+}
+

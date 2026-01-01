@@ -1,0 +1,67 @@
+{
+  "name": "Application Name",
+  "version": "1.0.0",
+  "description": "Brief description of the application",
+  "vendor": "Vendor Name",
+  "license": "License Type",
+  "homepage": "https://example.com/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "arm64", "arm"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S"],
+    "media": [
+      {
+        "name": "app-name-x64.exe",
+        "url": "https://example.com/downloads/app-name-x64.exe",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "value": "",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://example.com/downloads/",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://example.com/downloads/app-name-x64.exe"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/Windows/Application Name/1.0.0/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-01T00:00:00Z",
+    "updated": "2025-01-01T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["tag1", "tag2"],
+    "categories": ["Category"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Windows/Application Name/1.0.0/manifest.json",
+    "verify": "/api/verify/apps/Windows/Application Name/1.0.0"
+  }
+}
+

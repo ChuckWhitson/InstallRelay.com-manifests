@@ -1,0 +1,19 @@
+{
+  "protocol": "sftp",
+  "host": "",
+  "port": 22,
+  "username": "",
+  "password": "",
+  "transfer_mode": "binary",
+  "timeout": 20,
+  "keep_alive": true,
+  "config_path": "~/Library/Application Support/FileZilla/sitemanager.xml",
+  "security": {
+    "allow_ftp": false,
+    "allow_ftps": false,
+    "allow_sftp": true,
+    "require_ssh_key": true,
+    "min_ssh_key_bits": 2048
+  }
+}
+

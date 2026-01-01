@@ -1,0 +1,28 @@
+{
+  "protocol": "sftp",
+  "host": "",
+  "port": 22,
+  "username": "",
+  "password": "",
+  "transfer_mode": "binary",
+  "timeout": 30,
+  "keep_alive": true,
+  "security": {
+    "allow_ftp": false,
+    "allow_ftps": true,
+    "allow_sftp": true,
+    "require_ssh_key": true,
+    "min_ssh_key_bits": 4096,
+    "verify_certificates": true
+  },
+  "logging": {
+    "enabled": true,
+    "log_file": "C:\\Program Files\\FileZilla\\logs\\filezilla.log",
+    "log_level": "info"
+  },
+  "bandwidth": {
+    "limit_enabled": false,
+    "limit_kbps": 0
+  }
+}
+

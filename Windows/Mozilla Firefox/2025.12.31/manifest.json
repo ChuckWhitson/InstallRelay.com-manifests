@@ -1,0 +1,67 @@
+{
+  "name": "Mozilla Firefox",
+  "version": "2025.12.31",
+  "description": "Free and open-source web browser",
+  "vendor": "Mozilla Foundation",
+  "license": "MPL-2.0",
+  "homepage": "https://www.mozilla.org/firefox/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": false,
+    "silentInstall": true,
+    "installArgs": ["-ms"],
+    "media": [
+      {
+        "name": "Firefox Setup.exe",
+        "url": "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US",
+            "format": "sha256",
+            "pattern": "SHA256:\\s*([a-fA-F0-9]{64})"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/windows/Mozilla Firefox/2025.12.31/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": false
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-01-15T10:30:00Z",
+    "updated": "2024-01-15T10:30:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["firefox", "browser", "web"],
+    "categories": ["Web Browsers"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/windows/Mozilla Firefox/2025.12.31/manifest.json",
+    "verify": "/api/verify/apps/windows/Mozilla Firefox/2025.12.31"
+  }
+}
+

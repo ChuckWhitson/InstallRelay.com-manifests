@@ -1,0 +1,102 @@
+{
+  "name": "7-Zip",
+  "version": "25.01",
+  "description": "File archiver with high compression ratio",
+  "vendor": "Igor Pavlov",
+  "license": "LGPL",
+  "homepage": "https://www.7-zip.org/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64", "arm64", "arm"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S"],
+    "media": [
+      {
+        "name": "7z2501-x64.exe",
+        "url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/7z2501-x64.exe/download",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/",
+            "format": "sha256",
+            "pattern": "SHA-256:\\s*([a-f0-9]{64})"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/7z2501-x64.exe/download"
+      },
+      {
+        "name": "7z2501-arm64.exe",
+        "url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/7z2501-arm64.exe/download",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/",
+            "format": "sha256",
+            "pattern": "SHA-256:\\s*([a-f0-9]{64})"
+          }
+        },
+        "architecture": "arm64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/7z2501-arm64.exe/download"
+      },
+      {
+        "name": "7z2501-arm.exe",
+        "url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/7z2501-arm.exe/download",
+        "size": 0,
+        "hash": {
+          "algorithm": "sha256",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/",
+            "format": "sha256",
+            "pattern": "SHA-256:\\s*([a-f0-9]{64})"
+          }
+        },
+        "architecture": "arm",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://sourceforge.net/projects/sevenzip/files/7-Zip/25.01/7z2501-arm.exe/download"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/Windows/7-Zip/25.01/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2024-01-15T10:30:00Z",
+    "updated": "2025-01-15T10:30:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["compression", "archive", "utility"],
+    "categories": ["Utilities"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Windows/7-Zip/25.01/manifest.json",
+    "verify": "/api/verify/apps/Windows/7-Zip/25.01"
+  }
+}
