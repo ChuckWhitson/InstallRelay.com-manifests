@@ -1,0 +1,67 @@
+{
+  "name": "Everything",
+  "version": "1.4.1.1030",
+  "description": "Locate files and folders by name instantly",
+  "vendor": "voidtools",
+  "license": "Freeware",
+  "homepage": "https://www.voidtools.com/",
+  "os": {
+    "platform": "windows",
+    "minOSVersion": "10.0.19041",
+    "verifyOSVersion": true,
+    "enforceOSVersion": false,
+    "supportedArchitectures": ["x64"]
+  },
+  "installation": {
+    "type": "exe",
+    "rebootRequired": false,
+    "requiresElevation": true,
+    "silentInstall": true,
+    "installArgs": ["/S"],
+    "media": [
+      {
+        "name": "Everything-1.4.1.1030.x64-Setup.exe",
+        "url": "https://installrelay.com/api/apps/Windows/Everything/1.4.1.1030/Everything-1.4.1.1030.x64-Setup.exe",
+        "size": 1987584,
+        "hash": {
+          "algorithm": "sha256",
+          "value": "553fd2477e830f686d140d8e7ff79fc3d69239a754c85be4cf7e45a625a50396",
+          "public_source": {
+            "type": "vendor",
+            "url": "https://www.voidtools.com/",
+            "format": "sha256"
+          }
+        },
+        "architecture": "x64",
+        "language": "en-US",
+        "relay": true,
+        "vendor_url": "https://www.voidtools.com/Everything-1.4.1.1030.x64-Setup.exe"
+      }
+    ],
+    "scripts": {
+      "powershell": {
+        "url": "https://installrelay.com/api/apps/Windows/Everything/1.4.1.1030/install.ps1",
+        "hash": {
+          "algorithm": "sha256"
+        },
+        "executionPolicy": "Bypass",
+        "requiresElevation": true
+      }
+    }
+  },
+  "prerequisites": [],
+  "dependencies": [],
+  "postInstall": [],
+  "metadata": {
+    "created": "2025-01-01T00:00:00Z",
+    "updated": "2025-01-01T00:00:00Z",
+    "maintainer": "admin@installrelay.com",
+    "tags": ["search", "file-finder", "productivity", "utilities"],
+    "categories": ["Utilities"]
+  },
+  "api_endpoints": {
+    "manifest": "/api/manifest/Windows/Everything/1.4.1.1030/manifest.json",
+    "verify": "/api/verify/apps/Windows/Everything/1.4.1.1030"
+  }
+}
+
